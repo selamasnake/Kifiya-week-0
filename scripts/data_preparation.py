@@ -1,7 +1,9 @@
 import pandas as pd 
 
-def load_data(file_path):
-    df = pd.read_csv(file_path)
+def load_data(url):
+    file_id=url.split('/')[-2]
+    dwn_url='https://drive.google.com/uc?id=' + file_id
+    df = pd.read_csv(dwn_url)
     pd.set_option('display.max_columns', 20)
     return df
 
@@ -44,28 +46,28 @@ def calculate_zscore(df):
     print(outlier_rows.head(5))
     return df_for_zscore
 
-def update_outliers(df):
-    df_for_zscore = df.drop(['Timestamp'], axis= 1).copy()
-    df_zscores = (df_for_zscore - df_for_zscore.mean()) / df_for_zscore.std()
-    outliers = df_zscores.abs() > 3
+# def update_outliers(df):
+#     df_for_zscore = df.drop(['Timestamp'], axis= 1).copy()
+#     df_zscores = (df_for_zscore - df_for_zscore.mean()) / df_for_zscore.std()
+#     outliers = df_zscores.abs() > 3
 
-    df_zscore_corrected = df_for_zscore.copy()  
-    mean = df_for_zscore.mean()
+#     df_zscore_corrected = df_for_zscore.copy()  
+#     mean = df_for_zscore.mean()
 
-    for column in df_for_zscore.columns:
-        column_mean = mean[column]
-        df_zscore_corrected[column] = df_for_zscore[column].where(~outliers[column], column_mean)
+#     for column in df_for_zscore.columns:
+#         column_mean = mean[column]
+#         df_zscore_corrected[column] = df_for_zscore[column].where(~outliers[column], column_mean)
 
-    df_zscore_corrected['Timestamp'] = df['Timestamp']
-    cols = ['Timestamp'] + [col for col in df_zscore_corrected.columns if col != 'Timestamp']
-    df_zscore_corrected = df_zscore_corrected[cols]
-    df = df_zscore_corrected
-    return df
+#     df_zscore_corrected['Timestamp'] = df['Timestamp']
+#     cols = ['Timestamp'] + [col for col in df_zscore_corrected.columns if col != 'Timestamp']
+#     df_zscore_corrected = df_zscore_corrected[cols]
+#     df = df_zscore_corrected
+#     return df
 
 
 def main():
-    file_path = 'data/benin-malanville.csv'
-    df = load_data(file_path)
+    url = ''
+    df = load_data(url)
     explore_data(df)
     convert_datatypes(df)
     handle_missing_values(df)
@@ -73,8 +75,6 @@ def main():
     remove_negative_values(df)
     summary_statistics(df)
     calculate_zscore(df)
-    update_outliers(df)
-
 
 if __name__ == "__main__":
     main()

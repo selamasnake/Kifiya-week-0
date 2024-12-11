@@ -31,6 +31,9 @@ def remove_negative_values(df):
     df = df[df['DHI'] >= 0]
     return df
 
+def summary_statistics(df):
+    return df.describe()
+
 def calculate_zscore(df):
     df_for_zscore = df.drop(['Timestamp'], axis= 1).copy()
     df_zscores = (df_for_zscore - df_for_zscore.mean()) / df_for_zscore.std()
@@ -68,6 +71,7 @@ def main():
     handle_missing_values(df)
     drop_columns(df)
     remove_negative_values(df)
+    summary_statistics(df)
     calculate_zscore(df)
     update_outliers(df)
 

@@ -12,12 +12,12 @@ def summary_statistics(df):
     return df.describe()
 
 def resample_data_h(df):
-    df.set_index('Timestamp', inplace=True)
+    df.set_index('Timestamp', inplace=True, drop=False)    
     hourly_data = df.resample('h').mean()
     return hourly_data
 
 def resample_data_m(df):
-    df.set_index('Timestamp')
+    df.set_index('Timestamp', inplace=True, drop=False)
     monthly_data = df.resample('h').mean()
     return df
 

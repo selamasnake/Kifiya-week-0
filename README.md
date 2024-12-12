@@ -15,7 +15,6 @@ The project is organized as follows:
 * data/: Stores all data-related files.
 * src/notebooks/: Contains Jupyter notebooks for interactive data analysis.
 * scripts/: Python scripts for reusable code functions.
-* results/figures: Contains visualizations generated through EDA.
 * requirements.txt: Contains the necessary dependencies to run the project.
 
 ### Tools, Frameworks, and Libraries Used

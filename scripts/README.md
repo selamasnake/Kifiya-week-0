@@ -4,8 +4,8 @@ This folder contains Python scripts for data preparation and analysis.
 
 ##### Scripts
 
-- [data_preparation.py](scripts/data_analysis.py): Contains script used in the data preprocessing.
-- [data_analysis.py](scripts/data_analysis.py): Contains script used in the data analysis process.
+- `data_preparation.py`: Contains script used in the data preprocessing.
+- `data_analysis.py`: Contains script used in the data analysis process.
 
 ##### Usage
 

@@ -4,9 +4,10 @@
 The goal of this project was to perform Exploratory Data Analysis (EDA) on a solar radiation measurement data provided for 3 countries, Benin, Sierraleone and Togo. And based on the analysis, high-potential regions for solar installation are to be identified helping MoonLight Energy Solutions optimize their solar energy installation strategy.
 
 Key activities include:
-    * Cleaning and preprocessing the data.
-    * Visualizing solar radiation patterns by region.
-    * Analyzing seasonal variations and time-series trends.
+
+   * Cleaning and preprocessing the data.
+   * Visualizing solar radiation patterns by region.
+   * Analyzing seasonal variations and time-series trends.
 
 ### File Structure
 The project is organized as follows:
@@ -20,9 +21,9 @@ The project is organized as follows:
 ### Tools, Frameworks, and Libraries Used
 
 #### Tools:
-    * Jupyter Notebooks: Used for interactive analysis and visualization.
-    * Git: Version control for managing changes.
-    * Python: Primary programming language for data processing and analysis.
+   * Jupyter Notebooks: Used for interactive analysis and visualization.
+   * Git: Version control for managing changes.
+   * Python: Primary programming language for data processing and analysis.
 
 #### Frameworks & Libraries:
 * Pandas: For data manipulation and cleaning (e.g., handling missing values, data transformation).
@@ -39,19 +40,23 @@ Before running the project, make sure you have Python 3.7+ , pip installed.
     https://github.com/selamasnake/kiam-week-0.git
     cd kiam-week-0
     ```
-Make sure a virtual environment is axtivated then,
-2. Install dependencies : Install the required Python libraries by using the requirements.txt
+2. Install dependencies and the required Python libraries by using the requirements.txt
     ```
     pip install -r requirements.txt
-
     ```
 3. Run the notebooks
-    Navigate to the src/notebooks directory, which are divided by country. 
+
+    Navigate to the src/notebooks directory, which are divided by country.
+   
     Go to each country's directory and start with the `data_preparation.ipynb` notebook to load the data and clean it.
+   
     Then move to `data_anaysis.ipynb` notebook to perform the exploratory analysis.
+   
     Visualizations will be generated at each step to interpret the data. 
 
-4. Running Python Scripts
-    Navigate to the scripts directory,
-    Run the Python scripts directly `data_preparation.py` and `data_analysis.py` to execute parts of the data cleaning & analysis process.
+5. Running Python Scripts
+   
+   Navigate to the scripts directory.
+   
+   Run the Python scripts directly `data_preparation.py` and `data_analysis.py` to execute parts of the data cleaning & analysis process.
 
